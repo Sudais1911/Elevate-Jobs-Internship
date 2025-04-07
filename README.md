@@ -3,23 +3,23 @@ Intership for 1 month
 1st Day Task
 Data Cleaning Summary for the file amazon.csv
 1. Identify and Handle Missing Values
-✅ Used df.isnull().sum() to detect missing values.
+ Used df.isnull().sum() to detect missing values.
 
-✅ Found missing values in columns like rating and reviews.
+ Found missing values in columns like rating and reviews.
 
-✅ Missing values were handled using:
+ Missing values were handled using:
 
 dropna() to remove rows with critical nulls, or
 
 fillna() for numeric columns using mean/median imputation.
 
 2. Remove Duplicate Rows
-✅ Used df.duplicated().sum() to find duplicate rows.
+ Used df.duplicated().sum() to find duplicate rows.
 
-✅ Removed all duplicates using df.drop_duplicates().
+ Removed all duplicates using df.drop_duplicates().
 
 3. Standardize Text Values
-✅ Text columns like category, brand, and availability were cleaned:
+ Text columns like category, brand, and availability were cleaned:
 
 Converted to lowercase.
 
@@ -27,19 +27,19 @@ Stripped leading/trailing spaces.
 
 Corrected inconsistent entries (e.g., 'availble' → 'available', 'Unavailble' → 'unavailable').
 
-✅ For example, inconsistent brand names were standardized (e.g., samsung, Samsung → Samsung).
+ For example, inconsistent brand names were standardized (e.g., samsung, Samsung → Samsung).
 
 4. Convert Date Formats
-✅ date_added column (if present) was converted to a consistent format:
+ date_added column (if present) was converted to a consistent format:
 
 python
 Copy
 Edit
 df['date_added'] = pd.to_datetime(df['date_added'], errors='coerce')
-✅ Dates now follow a consistent format like dd-mm-yyyy.
+ Dates now follow a consistent format like dd-mm-yyyy.
 
 5. Rename Column Headers
-✅ All column names were cleaned:
+ All column names were cleaned:
 
 Converted to lowercase.
 
@@ -52,7 +52,7 @@ Copy
 Edit
 df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
 6. Check and Fix Data Types
-✅ Ensured correct data types:
+ Ensured correct data types:
 
 price and reviews → converted to numeric.
 
@@ -67,7 +67,7 @@ Copy
 Edit
 df['reviews'] = pd.to_numeric(df['reviews'], errors='coerce')
 df['rating'] = pd.to_numeric(df['rating'], errors='coerce')
-✅ Cleaned Data is Now:
+ Cleaned Data is Now:
 Free of nulls (or properly handled).
 
 Free of duplicates.
